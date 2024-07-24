@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggenda - Aplicativo de Agendamento para Pequenos Negócios</title>
+    <script src="https://kit.fontawesome.com/23eab126d7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient::before {
+            width: 300px;
+            height: 300px;
+            content: '';
+            background-image: linear-gradient(45deg, #15c1eb, blue);
+            position: absolute;
+            z-index: 1;
+            border-radius: 20% 30% 80% 10%;
+            filter: blur(150px);
+            top: 60%;
+            left: 65%;
+            transform: translate(-10%, -50%);
+        }
+
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        a.pulsar-hover {
+            display: inline-block;
+            transition: background-color 0.5s ease;
+            animation: pulsar 1.5s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section, .contato, .precos {
+                padding: 5%;
+            }
+
+            .features {
+                padding: 5%;
+                margin-top: 15%;
+            }
+
+            .gradient::before {
+                width: 300px;
+                height: 200px;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                filter: blur(80px);
+            }
+
+            .image {
+                z-index: 99;
+                align-items: center;
+            }
+
+            .hero-text {
+                max-width: 80%;
+            }
+            .hero-text h1{
+                font-size: 3rem;
+                line-height: 3rem;
+                margin-top: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="header-blur bg-transparent bg-opacity-30 shadow">
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center max-w-5xl">
+            <a href="#" class="text-2xl font-bold text-blue-600 flex"><div class="bg-blue-500 h-7 w-7 rounded-md justify-center items-center flex mr-2"><i class="fa-solid fa-calendar-days text-white text-base"></i></div>Aggenda</a>
+            <button class="text-gray-600 md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div id="menu" class="flex flex-wrap justify-center mt-2 md:mt-0 space-x-4 md:space-x-6 md:flex">
+                <a href="#features" class="text-gray-600 hover:text-blue-600">Recursos</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600">Preços</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 bg-gray-50 relative">
+        <div class="container max-w-5xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left relative z-10">
+            <div class="md:w-2/3 hero-text">
+                <span class="bg-blue-100 text-blue-600 py-1 px-3 rounded-full text-sm font-semibold">Mais de 5 mil
+                    usuários <span class="text-yellow-500 text-xl ml-5">★★★★★</span></span>
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mt-4">Simplifique o <span
+                        class="text-blue-500">Agendamento</span> para seu Negócio</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-400">O <strong>Aggenda</strong> é o aplicativo perfeito para
+                    manicures, designers de sobrancelha e outros pequenos negócios locais. Experimente gratuitamente por
+                    7 dias!</p>
+                <a href="#signup"
+                    class="mt-8 bg-blue-500 text-white px-8 py-3 rounded-full inline-block text-lg font-semibold pulsar-hover hover:bg-blue-700">Comece
+                    Seu Teste Grátis</a>
+            </div>
+            <div class="w-full md:w-2/3 mt-8 md:mt-0 relative image z-10">
+                <img src="./assets/banner.png" alt="Imagem do Aggenda" class="w-full h-auto">
+            </div>
+            <span class="gradient"></span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features py-20">
+        <div class="container mx-auto text-center flex flex-col items-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Recursos do <span class="text-blue-500">Aggenda</span></h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <div class="flex flex-col bg-white shadow rounded-lg p-8 items-center">
+                    <div class="flex justify-center items-center bg-green-200 w-16 h-16 rounded-md mb-5">
+                        <i class="fa-solid fa-face-smile-beam text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Fácil de Usar</h3>
+                    <p class="text-gray-600">Interface intuitiva que facilita o agendamento de compromissos para seus
+                        clientes.</p>
+                </div>
+                <div class="flex flex-col bg-white shadow rounded-lg p-8 items-center">
+                    <div class="flex justify-center items-center bg-blue-200 w-16 h-16 rounded-md mb-5">
+                        <i class="fa-solid fa-comment text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Notificações Automáticas</h3>
+                    <p class="text-gray-600">Envie lembretes automáticos para seus clientes via WhatsApp.</p>
+                </div>
+                <div class="flex flex-col bg-white shadow rounded-lg p-8 items-center">
+                    <div class="flex justify-center items-center bg-red-200 w-16 h-16 rounded-md mb-5">
+                        <i class="fa-solid fa-users text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Gestão de Clientes</h3>
+                    <p class="text-gray-600">Mantenha um registro completo de seus clientes e agendamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-gray-100 py-20 precos">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold">Planos e Preços</h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white shadow rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">Mensal</h3>
+                    <p class="text-4xl font-bold text-blue-600">R$9,90<small class="text-gray-400 text-xl">/mês</small></p>
+                    <div class="flex flex-col items-start mt-4">
+                        <p class="text-gray-600">✅ Todas as funcionalidades e atualizações</p>
+                        <p class="text-gray-600">✅ Cadastro de clientes</p>
+                        <p class="text-gray-600">✅ Cadastro de produtos/serviços</p>
+                        <p class="text-gray-600">✅ Armazenamento em nuvem</p>
+                        <p class="text-gray-600">❌ Desconto de + <strong>20%</strong></p>
+                    </div>
+                    <a href="#signup"
+                        class="mt-8 bg-green-600 text-white px-8 py-3 rounded-full inline-block text-lg font-semibold hover:bg-green-700">Baixar
+                        Agora</a>
+                </div>
+                <div class="bg-white shadow rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">Anual</h3>
+                    <p class="text-4xl font-bold text-blue-600">R$94,90<small class="text-gray-400 text-xl">/ano</small></p>
+                    <div class="flex flex-col items-start mt-4">
+                        <p class="text-gray-600">✅ Todas as funcionalidades e atualizações</p>
+                        <p class="text-gray-600">✅ Cadastro de clientes</p>
+                        <p class="text-gray-600">✅ Cadastro de produtos/serviços</p>
+                        <p class="text-gray-600">✅ Armazenamento em nuvem</p>
+                        <p class="text-gray-600">✅ Desconto de + <strong>20%</strong></p>
+                    </div>
+                    <a href="#signup"
+                        class="mt-8 bg-green-600 text-white px-8 py-3 rounded-full inline-block text-lg font-semibold hover:bg-green-700">Baixar
+                        Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contato py-20">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold">Entre em Contato</h2>
+            <p class="mt-4 text-gray-600">Tem alguma dúvida ou precisa de suporte? Entre em contato com nossa equipe!</p>
+            <a href="mailto:suporte@aggenda.com.br"
+                class="mt-8 bg-blue-500 text-white px-8 py-3 rounded-full inline-block text-lg font-semibold hover:bg-blue-700">Envie
+                um E-mail</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Aggenda. Todos os direitos reservados.</p>
+            <div class="mt-4">
+                <a href="https://www.facebook.com/aggenda" class="text-gray-400 hover:text-white mx-2"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/aggenda" class="text-gray-400 hover:text-white mx-2"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/aggenda" class="text-gray-400 hover:text-white mx-2"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
